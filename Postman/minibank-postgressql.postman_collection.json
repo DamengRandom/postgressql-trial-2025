@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "c8041b74-332b-488b-9b61-c1ef1fc288c8",
+		"name": "minibank-postgressql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11534855",
+		"_collection_link": "https://dameng.postman.co/workspace/Trials~fd9380c5-17ec-4e71-b59e-e088998c7071/collection/11534855-c8041b74-332b-488b-9b61-c1ef1fc288c8?action=share&source=collection_link&creator=11534855"
+	},
+	"item": [
+		{
+			"name": "GET customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1895/api/v1/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "1895",
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST new customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"celia@test.co\",\n    \"username\": \"celia\",\n    \"password\": \"celia1234\",\n    \"firstName\": \"celia\",\n    \"lastName\": \"jin\",\n    \"info\": {\n        \"age\": 37,\n        \"hair_color\": \"black\"\n    },\n    \"address\": {\n        \"street\": \"Pitt street\",\n        \"city\": \"Sydney\",\n        \"province\": \"NSW\",\n        \"postcode\": \"2000\"\n    },\n    \"family_members\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:1895/api/v1/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "1895",
+					"path": [
+						"api",
+						"v1",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET bankers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1895/api/v1/bankers",
+					"host": [
+						"localhost"
+					],
+					"port": "1895",
+					"path": [
+						"api",
+						"v1",
+						"bankers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST new banker",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"ella.banker@test.co\",\n    \"username\": \"ella_banker\",\n    \"password\": \"ella4567\",\n    \"firstName\": \"ella\",\n    \"lastName\": \"wu\",\n    \"employee_number\": 1672361723667127,\n    \"address\": {\n        \"street\": \"Geogre street\",\n        \"city\": \"Sydney\",\n        \"province\": \"NSW\",\n        \"postcode\": \"2001\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:1895/api/v1/banker",
+					"host": [
+						"localhost"
+					],
+					"port": "1895",
+					"path": [
+						"api",
+						"v1",
+						"banker"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST new transaction based on customer id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"deposit\",\n    \"amount\": 4000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:1895/api/v1/customers/4/transaction",
+					"host": [
+						"localhost"
+					],
+					"port": "1895",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"4",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1895/api/v1/transactions",
+					"host": [
+						"localhost"
+					],
+					"port": "1895",
+					"path": [
+						"api",
+						"v1",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET customer by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1895/api/v1/customers/3",
+					"host": [
+						"localhost"
+					],
+					"port": "1895",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET customers with transactions (allow pass params)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1895/api/v1/customers/transactions?min=100&max=1000",
+					"host": [
+						"localhost"
+					],
+					"port": "1895",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "min",
+							"value": "100"
+						},
+						{
+							"key": "max",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE customer and the transaction records",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:1895/api/v1/customers/3",
+					"host": [
+						"localhost"
+					],
+					"port": "1895",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH banker",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"updated_damon_banker\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:1895/api/v1/bankers/1",
+					"host": [
+						"localhost"
+					],
+					"port": "1895",
+					"path": [
+						"api",
+						"v1",
+						"bankers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
