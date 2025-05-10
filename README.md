@@ -1,6 +1,6 @@
 # Learn something related with PostgresSQL
 
-- This is just a quick demo for docker, postgressql and nodejs in TS with express.
+- This is just a quick demo for docker, postgressql and expressjs in TS version.
 - This is not a production ready code.
 
 ## Install & Local Setups
